@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.merriweather-sans {
+    font-family: "Merriweather Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
