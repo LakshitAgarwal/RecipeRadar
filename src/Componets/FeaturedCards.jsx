@@ -9,7 +9,7 @@ const FeaturedCards = ({ data }) => {
           <div
             key={i.idMeal}
             className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105"
-            style={{ minWidth: "16rem" }} // Keeps the original size
+            style={{ minWidth: "16rem", maxWidth:"17rem" }} // Keeps the original size
           >
             <img
               src={i.strMealThumb}
@@ -29,7 +29,7 @@ const FeaturedCards = ({ data }) => {
               )}
             </div>
             <div className="px-4 pb-4">
-              <Link to={`/${i.idMeal}`}>
+              <Link to={`/details/${i.idMeal}`}>
                 <button className="w-full py-1 text-sm font-medium border bg-yellow-50 cursor-pointer border-yellow-400 text-yellow-500 rounded-md hover:bg-yellow-400 hover:text-white transition">
                   View Recipe
                 </button>

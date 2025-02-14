@@ -4,11 +4,11 @@ import Navbar from "./Componets/Navbar";
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Navbar />
       <HeroSection />
       {/* <MainSection /> */}
-    </>
+    </div>
   );
 }
 

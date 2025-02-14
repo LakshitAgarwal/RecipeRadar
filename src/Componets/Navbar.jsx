@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "../Assets/logo.png";
+import logo from "../Assets/logo2.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-yellow-100 shadow-md">
+    <nav className="bg-black shadow-md w-[90%] mx-auto rounded-full mt-5">
       <div className="max-w-8xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-14"> {/* Reduced height */}
           {/* Logo (Left Corner) */}
           <div className="flex-shrink-0">
             <img src={logo} alt="Logo" className="h-16 w-auto" />
@@ -13,21 +13,21 @@ const Navbar = () => {
 
           {/* Navigation Links and Button (Right Side) */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-gray-900 font-medium">
+            <a href="#home" className="text-white hover:text-yellow-300 font-medium">
               Home
             </a>
-            <a href="#about" className="text-gray-700 hover:text-gray-900 font-medium">
+            <a href="#about" className="text-white hover:text-yellow-300 font-medium">
               About
             </a>
-            <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">
+            <a href="#services" className="text-white hover:text-yellow-300 font-medium">
               Services
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-gray-900 font-medium">
+            <a href="#contact" className="text-white hover:text-yellow-300 font-medium">
               Contact
             </a>
             <a
               href="#"
-              className="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-900"
+              className="px-4 py-2 bg-yellow-300 text-black rounded-2xl hover:bg-yellow-400 text-sm font-medium"
             >
               Get Started
             </a>

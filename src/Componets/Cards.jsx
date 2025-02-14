@@ -20,12 +20,14 @@ const Cards = ({ data }) => {
             </h2>
             {i.strCategory === "Vegetarian" ? (
               <span className="text-green-500">🟢</span>
-            ) : (
+            ) : i.strCategory === "Non-Vegetarian" ? (
               <span className="text-red-500">🔴</span>
+            ) : (
+              <span className="text-gray-400"></span> // Fallback for unknown or missing category
             )}
           </div>
           <div className="px-4 pb-4">
-            <Link to={`/${i.idMeal}`}>
+            <Link to={`/details/${i.idMeal}`}>
               <button className="w-full py-1 text-sm font-medium border bg-yellow-50 cursor-pointer border-yellow-400 text-yellow-500 rounded-md hover:bg-yellow-400 hover:text-white transition">
                 View Recipe
               </button>

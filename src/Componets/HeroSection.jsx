@@ -3,6 +3,7 @@ import chefImg from "../Assets/chef.png";
 import { API_URl } from "../Utils/constants";
 import Cards from "./Cards";
 import FeaturedRecipes from "./FeaturedRecipes";
+import CategorySearch from "./CategorySearch";
 
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,7 +39,7 @@ const HeroSection = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               type="text"
               placeholder="Search for recipes..."
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-gray-500 text-gray-800"
+              className="flex-1 px-4 py-3 border bg-[#f2dcba] border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-gray-500 text-gray-800"
             />
 
             <button
@@ -58,6 +59,7 @@ const HeroSection = () => {
         </div>
       </div>
       <FeaturedRecipes />
+      <CategorySearch />
       <Cards data={cardData} />
     </div>
   );
