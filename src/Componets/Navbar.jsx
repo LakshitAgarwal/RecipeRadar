@@ -1,28 +1,44 @@
 import React from "react";
 import logo from "../Assets/logo2.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="bg-black shadow-md w-[90%] mx-auto rounded-full mt-5">
       <div className="max-w-8xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-14"> {/* Reduced height */}
+        <div className="flex items-center justify-between h-14">
+          {" "}
+          {/* Reduced height */}
           {/* Logo (Left Corner) */}
-          <div className="flex-shrink-0">
-            <img src={logo} alt="Logo" className="h-16 w-auto" />
-          </div>
-
+          <Link to="/">
+            <div className="flex-shrink-0">
+              <img src={logo} alt="Logo" className="h-16 w-auto" />
+            </div>
+          </Link>
           {/* Navigation Links and Button (Right Side) */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-white hover:text-yellow-300 font-medium">
+            <a
+              href="#home"
+              className="text-white hover:text-yellow-300 font-medium"
+            >
               Home
             </a>
-            <a href="#about" className="text-white hover:text-yellow-300 font-medium">
+            <a
+              href="#about"
+              className="text-white hover:text-yellow-300 font-medium"
+            >
               About
             </a>
-            <a href="#services" className="text-white hover:text-yellow-300 font-medium">
+            <a
+              href="#services"
+              className="text-white hover:text-yellow-300 font-medium"
+            >
               Services
             </a>
-            <a href="#contact" className="text-white hover:text-yellow-300 font-medium">
+            <a
+              href="#contact"
+              className="text-white hover:text-yellow-300 font-medium"
+            >
               Contact
             </a>
             <a
@@ -32,7 +48,6 @@ const Navbar = () => {
               Get Started
             </a>
           </div>
-
           {/* Mobile Menu Button (Right Side for Mobile) */}
           <div className="md:hidden">
             <button
