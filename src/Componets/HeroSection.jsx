@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import chefImg from "../Assets/chef.png";
 import { API_URl } from "../Utils/constants";
 import Cards from "./Cards";
+import FeaturedRecipes from "./FeaturedRecipes";
 
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,7 +22,7 @@ const HeroSection = () => {
     <div>
       <div className="flex justify-between items-center px-10 py-10">
         <div className="w-[40%] space-y-8  ml-10">
-          <h1 className="text-6xl font-extrabold text-gray-800 leading-snug">
+          <h1 className="text-6xl font-extrabold text-gray-800 leading-snug merriweather-sans">
             Learn Cooking in a Simple Way
           </h1>
           <p className="text-lg text-gray-600">
@@ -56,6 +57,7 @@ const HeroSection = () => {
           />
         </div>
       </div>
+      <FeaturedRecipes />
       <Cards data={cardData} />
     </div>
   );
