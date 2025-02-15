@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import chefImg from "../Assets/chef.png";
 import { API_URl } from "../Utils/constants";
 import Cards from "./Cards";
 import FeaturedRecipes from "./FeaturedRecipes";
 import CategorySearch from "./CategorySearch";
+import MainSearch from "./MainSearch";
 
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [cardData, setCardData] = useState([]);
 
-  const callApi = async () => {
+  // Function to Fetch Data
+  const callApi = async (query = searchQuery) => {
     try {
-      const response = await fetch(API_URl + searchQuery);
+      const response = await fetch(API_URl + (query || "cakes")); // Default to "cakes"
       const data = await response.json();
       setCardData(data.meals);
     } catch (error) {
@@ -19,10 +21,15 @@ const HeroSection = () => {
     }
   };
 
+  // Fetch "cakes" when component mounts
+  useEffect(() => {
+    callApi("cakes");
+  }, []);
+
   return (
     <div>
       <div className="flex justify-between items-center px-10 py-10">
-        <div className="w-[40%] space-y-8  ml-10">
+        <div className="w-[40%] space-y-8 ml-10">
           <h1 className="text-6xl font-extrabold text-gray-800 leading-snug merriweather-sans">
             Learn Cooking in a Simple Way
           </h1>
@@ -43,7 +50,7 @@ const HeroSection = () => {
             />
 
             <button
-              onClick={callApi}
+              onClick={() => callApi(searchQuery)}
               className="px-6 py-3 bg-yellow-500 cursor-pointer text-white rounded-lg hover:bg-yellow-600 transition-all"
             >
               Search
@@ -60,6 +67,12 @@ const HeroSection = () => {
       </div>
       <FeaturedRecipes />
       <CategorySearch />
+      <MainSearch
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        callApi={callApi}
+        cardData={cardData}
+      />
       <Cards data={cardData} />
     </div>
   );
