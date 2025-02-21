@@ -4,11 +4,11 @@ import ShimmerUI from "./ShimmerUI"; // ⬅️ Make sure this is imported
 
 const Cards = ({ data, isLoading }) => {
   return (
-    <div className="p-6 overflow-x-auto ml-13 featured">
+    <div className="p-6 overflow-x-auto lg:ml-13 featured">
       {isLoading ? (
         <ShimmerUI x={8} />
       ) : (
-        <div className="flex flex-wrap justify-center gap-12 w-[95%] mx-auto mt-14">
+        <div className="flex flex-wrap justify-center lg:gap-12 gap-6 w-[95%] mx-auto mt-3 lg:mt-14">
           {data?.map((i) => (
             <div
               key={i.idMeal}

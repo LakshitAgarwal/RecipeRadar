@@ -30,7 +30,6 @@ const RecipeDetails = () => {
     );
   }
 
-  // Extract ingredients dynamically
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
     if (recipeData[`strIngredient${i}`]) {
@@ -41,7 +40,6 @@ const RecipeDetails = () => {
     }
   }
 
-  // Toggle ingredient strike-through only when checkbox is clicked
   const toggleIngredient = (index) => {
     setCheckedIngredients((prevState) => ({
       ...prevState,
@@ -50,36 +48,37 @@ const RecipeDetails = () => {
   };
 
   return (
-    <div className="min-h-screen   text-gray-900 py-12 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto bg-[#fff9e8] p-10 rounded-xl shadow-lg border border-gray-200">
-        {/* Recipe Header */}
-        <div className="flex flex-col md:flex-row items-start gap-8">
-          {/* Recipe Image */}
+    <div className="min-h-screen text-gray-900 py-12 px-4 sm:px-6 md:px-12">
+      <div className="max-w-6xl mx-auto bg-[#fff9e8] p-6 sm:p-10 rounded-xl shadow-lg border border-gray-200">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           <img
             src={recipeData.strMealThumb}
             alt={recipeData.strMeal}
-            className="w-64 h-64 object-cover rounded-lg shadow-md border-2 border-gray-300"
+            className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-lg shadow-md border-2 border-gray-300"
           />
-          {/* Recipe Info */}
-          <div className="flex-1 mt-1">
-            <h1 className="text-4xl font-bold text-gray-800 merriweather-sans">{recipeData.strMeal}</h1>
-            <p className="text-lg text-gray-600 mt-2 ">🌍 Origin: {recipeData.strArea}</p>
-            <p className="text-lg text-gray-600">🍽️ Category: {recipeData.strCategory}</p>
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="lg:text-4xl text-2xl font-bold text-gray-800 merriweather-sans">
+              {recipeData.strMeal}
+            </h1>
+            <p className="text-lg text-gray-600 mt-2">
+              🌍 Origin: {recipeData.strArea}
+            </p>
+            <p className="text-lg text-gray-600">
+              🍽️ Category: {recipeData.strCategory}
+            </p>
           </div>
         </div>
 
-        {/* Ingredients List */}
-        <div className="mt-10 p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
-          <h2 className="merriweather-sans text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
+        <div className="lg:mt-8 mt-12 p-4 sm:p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
+          <h2 className="merriweather-sans lg:text-2xl text-xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
             🥕 Ingredients (Tap to check)
           </h2>
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {ingredients.map((item, index) => (
               <div
                 key={index}
                 className="flex items-center gap-3 p-3 rounded-md shadow-sm border border-gray-300 bg-white text-gray-700"
               >
-                {/* Checkbox with Label to Handle Click */}
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -87,7 +86,13 @@ const RecipeDetails = () => {
                     onChange={() => toggleIngredient(index)}
                     className="h-5 w-5 accent-gray-700 cursor-pointer"
                   />
-                  <span className={checkedIngredients[index] ? "line-through text-gray-400" : ""}>
+                  <span
+                    className={
+                      checkedIngredients[index]
+                        ? "line-through text-gray-400"
+                        : ""
+                    }
+                  >
                     {item.ingredient}
                   </span>
                 </label>
@@ -97,24 +102,26 @@ const RecipeDetails = () => {
           </div>
         </div>
 
-        {/* Cooking Instructions */}
-        <div className="mt-10 p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
-          <h2 className="merriweather-sans text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
+        <div className="mt-8 p-4 sm:p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
+          <h2 className="merriweather-sans lg:text-2xl text-xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
             🍳 Cooking Instructions
           </h2>
-          <p className="mt-4 text-gray-700 leading-relaxed">{recipeData.strInstructions}</p>
+          <p className="mt-4 text-gray-700 leading-relaxed whitespace-pre-wrap">
+            {recipeData.strInstructions}
+          </p>
         </div>
 
-        {/* YouTube Video */}
         {recipeData.strYoutube && (
-          <div className="mt-10 p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
-            <h2 className="merriweather-sans text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
+          <div className="mt-8 p-4 sm:p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
+            <h2 className="merriweather-sans text-xl lg:text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
               🎥 Watch Tutorial
             </h2>
             <div className="mt-4">
               <iframe
-                className="w-full h-72 md:h-96 rounded-lg border-2 border-gray-300 shadow-md"
-                src={`https://www.youtube.com/embed/${recipeData.strYoutube.split("v=")[1]}`}
+                className="w-full h-64 sm:h-72 md:h-96 rounded-lg border-2 border-gray-300 shadow-md"
+                src={`https://www.youtube.com/embed/${
+                  recipeData.strYoutube.split("v=")[1]
+                }`}
                 title="Recipe Video"
                 allowFullScreen
               ></iframe>

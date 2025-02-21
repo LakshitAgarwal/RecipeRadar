@@ -48,7 +48,7 @@ const FeaturedRecipes = () => {
 
   return (
     <div className="relative">
-      <div className="ml-20 merriweather-sans text-xl -mt-16">
+      <div className="lg:ml-20 ml-6 merriweather-sans text-xl ">
         Featured {randomCountry} Recipes
       </div>
       <div className="relative">

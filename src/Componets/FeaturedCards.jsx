@@ -4,7 +4,7 @@ import ShimmerUI from "./ShimmerUI";
 
 const FeaturedCards = ({ data, isLoading }) => {
   return (
-    <div className="p-6 overflow-x-auto ml-13 featured">
+    <div className="p-6 overflow-x-auto lg:ml-13 featured">
       {isLoading ? (
         <ShimmerUI x={4} />
       ) : (
