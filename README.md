@@ -4,6 +4,15 @@ A dynamic and responsive Recipe App built using **ReactJS** that allows users to
 
 ## 🌟 Working
 
+
+https://github.com/user-attachments/assets/39ceffb4-589c-4b6e-8418-0fcf9b035c7f
+
+
+
+https://github.com/user-attachments/assets/b6fd13f0-4fc7-41bd-b62b-f64042d89a4b
+
+
+
 ## 🌟 Features
 
 - 🔍 **Search Recipes:** Search for your favorite recipes by name.
