@@ -9,15 +9,19 @@ import MainSearch from "./MainSearch";
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [cardData, setCardData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Function to Fetch Data
   const callApi = async (query = searchQuery) => {
+    setIsLoading(true); // ✅ Start shimmer before fetching
     try {
       const response = await fetch(API_URl + (query || "cakes")); // Default to "cakes"
       const data = await response.json();
       setCardData(data.meals);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false); // ✅ Stop shimmer after fetching
     }
   };
 
@@ -57,6 +61,7 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
+
         <div className="w-3/5 flex justify-end -mr-36">
           <img
             src={chefImg}
@@ -65,6 +70,7 @@ const HeroSection = () => {
           />
         </div>
       </div>
+
       <FeaturedRecipes />
       <CategorySearch />
       <MainSearch
@@ -73,7 +79,7 @@ const HeroSection = () => {
         callApi={callApi}
         cardData={cardData}
       />
-      <Cards data={cardData} />
+      <Cards data={cardData} isLoading={isLoading} /> {/* ✅ Shimmer applied here */}
     </div>
   );
 };

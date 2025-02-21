@@ -5,6 +5,7 @@ import FeaturedCards from "./FeaturedCards";
 const FeaturedRecipes = () => {
   const [featuredData, setFeaturedData] = useState([]);
   const [randomCountry, setRandomCountry] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const countryList = [
     "American",
@@ -35,6 +36,7 @@ const FeaturedRecipes = () => {
     const apiData = await fetch(SEARCH_BY_COUNTRY_API_URL + country);
     const data = await apiData.json();
     setFeaturedData(data.meals);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -51,7 +53,7 @@ const FeaturedRecipes = () => {
       </div>
       <div className="relative">
         <div className="absolute inset-0 top-[40%] bg-[#fde8c7] -z-10"></div>
-        <FeaturedCards data={featuredData} />
+        <FeaturedCards data={featuredData} isLoading={isLoading} />
       </div>
     </div>
   );
