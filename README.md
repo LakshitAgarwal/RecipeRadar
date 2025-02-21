@@ -2,6 +2,8 @@
 
 A dynamic and responsive Recipe App built using **ReactJS** that allows users to explore a wide variety of recipes, search by categories, and view detailed recipe instructions. The app integrates API calls to fetch real-time data and provides a smooth user experience with Shimmer UI for loading states.
 
+## 🌟 Working
+
 ## 🌟 Features
 
 - 🔍 **Search Recipes:** Search for your favorite recipes by name.
