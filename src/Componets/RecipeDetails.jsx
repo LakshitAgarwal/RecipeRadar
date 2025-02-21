@@ -50,8 +50,8 @@ const RecipeDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF3E0] text-gray-900 py-12 px-6 md:px-12">
-      <div className="max-w-5xl mx-auto bg-white p-10 rounded-xl shadow-lg border border-gray-200">
+    <div className="min-h-screen   text-gray-900 py-12 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto bg-[#fff9e8] p-10 rounded-xl shadow-lg border border-gray-200">
         {/* Recipe Header */}
         <div className="flex flex-col md:flex-row items-start gap-8">
           {/* Recipe Image */}
@@ -61,16 +61,16 @@ const RecipeDetails = () => {
             className="w-64 h-64 object-cover rounded-lg shadow-md border-2 border-gray-300"
           />
           {/* Recipe Info */}
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold text-gray-800">{recipeData.strMeal}</h1>
-            <p className="text-lg text-gray-600 mt-2">🌍 Origin: {recipeData.strArea}</p>
+          <div className="flex-1 mt-1">
+            <h1 className="text-4xl font-bold text-gray-800 merriweather-sans">{recipeData.strMeal}</h1>
+            <p className="text-lg text-gray-600 mt-2 ">🌍 Origin: {recipeData.strArea}</p>
             <p className="text-lg text-gray-600">🍽️ Category: {recipeData.strCategory}</p>
           </div>
         </div>
 
         {/* Ingredients List */}
         <div className="mt-10 p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
-          <h2 className="text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
+          <h2 className="merriweather-sans text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
             🥕 Ingredients (Tap to check)
           </h2>
           <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -99,7 +99,7 @@ const RecipeDetails = () => {
 
         {/* Cooking Instructions */}
         <div className="mt-10 p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
-          <h2 className="text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
+          <h2 className="merriweather-sans text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
             🍳 Cooking Instructions
           </h2>
           <p className="mt-4 text-gray-700 leading-relaxed">{recipeData.strInstructions}</p>
@@ -108,7 +108,7 @@ const RecipeDetails = () => {
         {/* YouTube Video */}
         {recipeData.strYoutube && (
           <div className="mt-10 p-6 bg-gray-50 rounded-lg border border-gray-300 shadow-sm">
-            <h2 className="text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
+            <h2 className="merriweather-sans text-2xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
               🎥 Watch Tutorial
             </h2>
             <div className="mt-4">

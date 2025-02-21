@@ -1,14 +1,14 @@
-import Footer from "./Componets/Footer";
-import HeroSection from "./Componets/HeroSection";
-// import MainSection from "./Componets/MainSection";
-import Navbar from "./Componets/Navbar";
+import { Outlet } from "react-router-dom";
+import Navbar from "./Componets/Navbar.jsx";
+import Footer from "./Componets/Footer.jsx";
 
 function App() {
   return (
     <div className="overflow-x-hidden">
       <Navbar />
-      <HeroSection />
-      {/* <MainSection /> */}
+      <div className="min-h-screen">
+        <Outlet /> {/* This will render the current route's component */}
+      </div>
       <Footer />
     </div>
   );

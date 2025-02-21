@@ -1,12 +1,33 @@
 @import "tailwindcss";
 
 .merriweather-sans {
-    font-family: "Merriweather Sans", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-  }
+  font-family: "Merriweather Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
 
-  .featured::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+.featured::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-wave {
+  animation: wave 6s ease-in-out infinite;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ff9e00,
+    0 0 40px #ff9e00;
 }
