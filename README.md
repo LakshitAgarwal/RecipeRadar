@@ -12,6 +12,12 @@ This project is a React-based web application that allows users to discover and 
 *   **Dynamic Routing:** 🛣️ Uses React Router for seamless navigation between different sections of the application.
 *   **Floating Emojis:** ✨ Added floating emoji animations to enhance the user interface.
 
+📸 **Working**
+
+https://github.com/user-attachments/assets/9121cfc3-8a19-4a43-a091-639f0b46e30f
+
+https://github.com/user-attachments/assets/e7f4a48a-9176-4e84-b60a-53b3be1386e0
+
 🛠️ **Tech Stack**
 
 | Category    | Technology                | Description                                                                 |
@@ -95,10 +101,6 @@ recipe-sharing-app/
 ├── README.md
 ```
 
-📸 **Screenshots**
-
-(Screenshots will be added here)
-
 🤝 **Contributing**
 
 Contributions are welcome! Please follow these steps:
@@ -109,13 +111,6 @@ Contributions are welcome! Please follow these steps:
 4.  Push your changes to your fork.
 5.  Submit a pull request.
 
-📝 **License**
-
-This project is licensed under the [MIT License](LICENSE).
-
-📬 **Contact**
-
-If you have any questions or suggestions, feel free to contact me at [Your Email].
 
 💖 **Thanks**
 
